@@ -12,7 +12,7 @@ function exibirTextoNaTela(tag, texto) {
 }
 
 function exibirMensageminicial() {
-  exibirTextoNaTela('h1', 'Jogo do Número Secreto');
+  exibirTextoNaTela('h1', 'Jogo do Número Secreto , By Marcelo Bevilacqua.');
   exibirTextoNaTela('p', 'Escolha um número entre 1 e 10:');
 
 }
