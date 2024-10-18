@@ -142,7 +142,7 @@ button:disabled {
 
     .container__conteudo {
         display: block;
-        position:relative;
+        position:absolute;
     }
 
     .container__informacoes {
