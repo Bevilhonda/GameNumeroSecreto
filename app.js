@@ -25,6 +25,11 @@ exibirMensageminicial();
 function verificarChute() {
 
   let chute = document.querySelector('input').value;
+  
+  if (isNaN(chute) || chute < 1 || chute > 10) {
+    exibirTextoNaTela('p', 'Por favor, escolha um número entre 1 e 10.');
+    return;
+  }
 
   if (chute == numeroSecreto) {
 
@@ -53,18 +58,13 @@ function verificarChute() {
 }
 
 function gerarNumeroALeatorio() {
-  let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
-  let quantidadeDeElementosNaLista = listaDeNumerosSorteados.length;
+  let numeroEscolhido;
+  do {
+    numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
+  } while (listaDeNumerosSorteados.includes(numeroEscolhido));
 
-  if(quantidadeDeElementosNaLista == numeroLimite ){
-    listaDeNumerosSorteados == [];
-  }
-  if(listaDeNumerosSorteados.includes(numeroEscolhido) ){
-    return gerarNumeroALeatorio();
-  }else{
-    listaDeNumerosSorteados.push(numeroEscolhido);
-    return numeroEscolhido;
-  }
+  listaDeNumerosSorteados.push(numeroEscolhido);
+  return numeroEscolhido;
 }
 
 function limparCampo() {
